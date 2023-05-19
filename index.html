@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D2 Test of Attention</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="welcome">
+        <h1>Добро пожаловать в тест D2!</h1>
+        <p>
+            Тест D2 предназначен для оценки вашего уровня сосредоточенности и внимания. <br>
+            В течение 5 минут вам будет предложено нажимать на все символы "d2" на экране. <br>
+            Постарайтесь сделать это как можно быстрее, но не спешите - если вы нажмёте <br> на неправильный символ, 
+            это тоже будет засчитано в тесте.
+        </p>
+        <label for="username">Введите ваше имя:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <br>
+        <button id="startButton">Перейти к тесту</button>
+    </div>
+
+    <div id="test" style="display:none;">
+        <h1>D2 Test of Attention</h1>
+        <div id="instructions">
+            <div id="instructionsText">Нажмите на все символы "d2" как можно быстрее. Тест длится 5 минут.</div>
+        </div>
+        <div id="testArea"></div>
+        <p>Оставшееся время: <span id="timeRemaining"></span></p>
+        <button id="beginTestButton" style="display:none;">Начать тестирование</button>
+        <button id="toResultsButton" style="display:none;">Перейти к результатам</button>
+    </div>
+
+    <div id="resultsPage" style="display:none;">
+        <h1>Результаты теста</h1>
+        <p>Имя: <span id="userNameDisplay"></span></p>
+        <p>Правильные ответы: <span id="finalCorrectAnswers">0</span></p>
+        <p>Неправильные ответы: <span id="finalIncorrectAnswers">0</span></p>
+    
+        <div id="results" style="display: none;">
+            <p>Правильные ответы: <span id="correctAnswers">0</span></p>
+            <p>Неправильные ответы: <span id="incorrectAnswers">0</span></p>
+        </div>
+    
+        <div id="feedback">
+            <h2>Обратная связь</h2>
+            <form id="feedbackForm">
+                <textarea id="feedbackText" placeholder="Ваше сообщение"></textarea><br>
+                <button id="feedbackSubmit" type="submit">Отправить</button>
+            </form>
+        </div>
+        <button id="saveResultsButton" style="display:none;">Сохранить результаты</button>
+        <button id="restartButton" style="display: none;">Перезапустить</button>
+    </div>
+
+    <audio id="correctSound" src="audio/correct.mp3" preload="auto"></audio>
+    <audio id="incorrectSound" src="audio/incorrect.mp3" preload="auto"></audio>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
